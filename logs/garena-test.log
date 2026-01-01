@@ -1,0 +1,64 @@
+[Profile] Using browser profile: {
+  seedString: 'Jaso.uc30',
+  osName: 'Windows 10',
+  chromeVersion: '125.0.0.0'
+}
+[Garena] B1: Mở https://account.garena.com
+[Garena] B2: Điền form đăng nhập
+[Garena] B3: Nhấn Đăng Nhập
+[Garena] Login không thành công, gõ lại chính xác.
+[Garena Playwright] Lỗi: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder="Tài khoản Garena, Email hoặc số điện thoại"]')[22m
+[2m    - locator resolved to <input disabled type="text" data-v-bc395f8b="" placeholder="Tài khoản Garena, Email hoặc số điện thoại"/>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not enabled[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at typeExact (/Users/treconyl/github/native-php/playwright/garena-runner.js:191:17)
+    at retryLoginIfNeeded (/Users/treconyl/github/native-php/playwright/garena-runner.js:655:11)
+    at async run (/Users/treconyl/github/native-php/playwright/garena-runner.js:540:9) {
+  name: 'TimeoutError'
+}
+[Profile] Using browser profile: {
+  seedString: 'Jaso.uc30',
+  osName: 'Windows 10',
+  chromeVersion: '125.0.0.0'
+}
+[Garena] B1: Mở https://account.garena.com
+[Garena] B2: Điền form đăng nhập
+[Garena] B3: Nhấn Đăng Nhập
+[Garena] Login không thành công, gõ lại chính xác.
+[Garena Playwright] Lỗi: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder="Tài khoản Garena, Email hoặc số điện thoại"]')[22m
+[2m    - locator resolved to <input disabled type="text" data-v-bc395f8b="" placeholder="Tài khoản Garena, Email hoặc số điện thoại"/>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not enabled[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at typeExact (/Users/treconyl/github/native-php/playwright/garena-runner.js:191:17)
+    at retryLoginIfNeeded (/Users/treconyl/github/native-php/playwright/garena-runner.js:655:11)
+    at async run (/Users/treconyl/github/native-php/playwright/garena-runner.js:540:9) {
+  name: 'TimeoutError'
+}
