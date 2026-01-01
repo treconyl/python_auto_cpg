@@ -33,7 +33,7 @@ def process_pending_for_proxy(proxy: dict[str, object]) -> None:
         "new_password": new_password,
         "proxy_key_id": proxy["id"],
         "proxy_label": proxy["label"],
-        "headless": True,
+        "headless": False,
     }
     run_garena_job(credentials)
 
@@ -76,6 +76,6 @@ def run_proxy_loop(proxy_id: int, idle_sleep: int = 10) -> None:
             "new_password": new_password,
             "proxy_key_id": proxy["id"],
             "proxy_label": proxy["label"],
-            "headless": True,
+            "headless": False,
         }
         run_garena_job(credentials)
