@@ -1,4 +1,4 @@
-# Python port notes
+# python_auto_cpg notes
 
 ## Scope and business flow
 
@@ -8,7 +8,7 @@
 
 ## Steps (done / todo)
 
-- [x] Create Python app skeleton under `python_port/`.
+- [x] Create Python app skeleton under `python_auto_cpg/`.
 - [x] Add SQLite init + migrations (accounts, proxy_keys, garena_test_credentials).
 - [x] Implement CRUD services for accounts and proxies.
 - [x] Connect Accounts UI: list, add/edit dialog, import/export CSV.
@@ -25,25 +25,32 @@
 
 ## Key files
 
-- `python_port/app/main.py` - app entry, tabs.
-- `python_port/app/services/db.py` - SQLite WAL + retry + migrate.
-- `python_port/app/services/accounts_service.py` - accounts CRUD + import/export.
-- `python_port/app/services/proxies_service.py` - proxy CRUD + API actions.
-- `python_port/app/services/garena_service.py` - Playwright spawn + log.
-- `python_port/app/ui/*` - views.
-- `python_port/requirements.txt` - runtime deps.
+- `python_auto_cpg/app/main.py` - app entry, tabs.
+- `python_auto_cpg/app/services/db.py` - SQLite WAL + retry + migrate.
+- `python_auto_cpg/app/services/accounts_service.py` - accounts CRUD + import/export.
+- `python_auto_cpg/app/services/proxies_service.py` - proxy CRUD + API actions.
+- `python_auto_cpg/app/services/garena_service.py` - Playwright spawn + log.
+- `python_auto_cpg/app/ui/*` - views.
+- `python_auto_cpg/playwright/*.js` - Playwright scripts (garena + 001proxy).
+- `python_auto_cpg/requirements.txt` - runtime deps.
 
 ## Basic run (dev)
 
-- Install deps: `pip install -r python_port/requirements.txt`
-- Run UI: `python -m app.main` from `python_port/`
+- Install deps: `pip install -r python_auto_cpg/requirements.txt`
+- Run UI: `python3 -m app.main` from `python_auto_cpg/`
+
+## Playwright setup (only when running Garena/001proxy jobs)
+
+- Ensure scripts live in `python_auto_cpg/playwright/` (or set `PLAYWRIGHT_ROOT` to another repo).
+- Install node deps: `cd python_auto_cpg/playwright && npm install`
+- Install browser: `npx playwright install chromium`
 
 ## Build (PyInstaller)
 
-- Run: `./build_pyinstaller.sh` from `python_port/`
-- Output: `python_port/dist/garena-tool`
+- Run: `./build_pyinstaller.sh` from `python_auto_cpg/`
+- Output: `python_auto_cpg/dist/python_auto_cpg`
 
 ## Notes
 
 - SQLite is safe for 5 workers if WAL + retry is enabled (already in `db.py`).
-- Playwright Node script is reused from existing `playwright/garena-runner.js`.
+- Playwright scripts are expected under `python_auto_cpg/playwright/` (or via `PLAYWRIGHT_ROOT`).

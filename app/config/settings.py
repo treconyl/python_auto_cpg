@@ -9,8 +9,8 @@ if getattr(sys, "frozen", False):
     REPO_ROOT = BASE_DIR
 else:
     BASE_DIR = Path(__file__).resolve().parents[2]
-    REPO_ROOT = BASE_DIR.parent
-APP_NAME = "garena-change-password"
+    REPO_ROOT = BASE_DIR
+APP_NAME = "python_auto_cpg"
 
 
 def resolve_user_data_root() -> Path:
@@ -38,8 +38,8 @@ def resolve_playwright_dir() -> Path:
     if env_root:
         candidates.append(Path(env_root) / "playwright")
         candidates.append(Path(env_root))
+    candidates.append(BASE_DIR / "playwright")
     candidates.append(Path.cwd() / "playwright")
-    candidates.append(REPO_ROOT / "playwright")
     for candidate in candidates:
         if (candidate / "garena-runner.js").exists():
             return candidate

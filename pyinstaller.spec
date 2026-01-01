@@ -5,7 +5,7 @@ import os
 block_cipher = None
 
 project_dir = Path(os.getcwd()).resolve()
-repo_root = project_dir.parent
+repo_root = project_dir
 
 app = project_dir / "app" / "main.py"
 playwright_script = repo_root / "playwright" / "garena-runner.js"
@@ -35,7 +35,7 @@ exe = EXE(
     analysis.binaries,
     analysis.datas,
     [],
-    name="garena-change-password",
+    name="python_auto_cpg",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

@@ -1,0 +1,14 @@
+{
+  "name": "python_auto_cpg",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "garena": "node garena-runner.js",
+    "proxy": "node 001proxy-test.js"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.43.0",
+    "dotenv": "^16.4.5"
+  }
+}

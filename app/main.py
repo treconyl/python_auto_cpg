@@ -26,7 +26,7 @@ from app.config import settings
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        self.setWindowTitle("Garena Change Password")
+        self.setWindowTitle("python_auto_cpg")
         icon_path = settings.ASSETS_DIR / "logo.png"
         if icon_path.exists():
             self.setWindowIcon(QtGui.QIcon(str(icon_path)))
@@ -49,7 +49,7 @@ def main() -> int:
         warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 
     app = QtWidgets.QApplication(sys.argv)
-    app.setApplicationName("Garena Change Password")
+    app.setApplicationName("python_auto_cpg")
     app.setStyleSheet(app_stylesheet())
     window = MainWindow()
     window.show()

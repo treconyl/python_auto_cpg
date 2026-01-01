@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from app.config import settings
-from app.services.runner_env import build_node_env
+from app.services.runner_env import build_node_env, resolve_node_bin
 
 
 def run_playwright(credentials: dict[str, Any]) -> tuple[int, str | None]:
@@ -27,7 +27,7 @@ def run_playwright(credentials: dict[str, Any]) -> tuple[int, str | None]:
         env["PLAYWRIGHT_PROXY_LABEL"] = credentials.get("proxy_label", "")
 
     process = subprocess.Popen(
-        ["node", str(script)],
+        [resolve_node_bin(), str(script)],
         cwd=str(settings.PLAYWRIGHT_DIR.parent),
         env=env,
         stdout=subprocess.PIPE,

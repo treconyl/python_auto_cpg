@@ -5,7 +5,7 @@ import threading
 import time
 from datetime import datetime
 from app.config import settings
-from app.services.runner_env import build_node_env
+from app.services.runner_env import build_node_env, resolve_node_bin
 
 _lock = threading.Lock()
 _processes: list[subprocess.Popen[str]] = []
@@ -19,7 +19,7 @@ def run_001proxy_test() -> int:
         log_path.write_text(f"{datetime.utcnow().isoformat()} missing script: {script}\n", encoding="utf-8")
         return 1
     process = subprocess.Popen(
-        ["node", str(script)],
+        [resolve_node_bin(), str(script)],
         cwd=str(settings.PLAYWRIGHT_DIR.parent),
         env=build_node_env(),
         stdout=subprocess.PIPE,
